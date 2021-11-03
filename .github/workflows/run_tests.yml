@@ -20,6 +20,6 @@ jobs:
           node-version: '3.8'
       - uses: BSFishy/pip-action@v1
         with:
-          packages: django django_slack_oauth
+          packages: django django_slack_oauth==1.5.0
       - name: Run tests
         run: python manage.py test
