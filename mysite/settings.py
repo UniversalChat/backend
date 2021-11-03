@@ -28,8 +28,8 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 # lol this is not safe but idk how to use os.environ.get yet
-SLACK_CLIENT_ID = 2684013468498.2669348519687
-SLACK_CLIENT_SECRET = e7f251b28ad8bfff290305f41916e951
+SLACK_CLIENT_ID = '2684013468498.2669348519687'
+SLACK_CLIENT_SECRET = 'e7f251b28ad8bfff290305f41916e951'
 SLACK_SCOPE = 'admin,bot'
 
 # Application definition
