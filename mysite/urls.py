@@ -19,6 +19,7 @@ from django.urls import include, path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path(r'^slack/', include('django_slack_oauth.urls')),
+    path('microsoft_authentication/', include('microsoft_authentication.urls')),
 ]
 
 # olivia test

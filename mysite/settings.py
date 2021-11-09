@@ -27,10 +27,28 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# ====================== SLACK ======================
+# inspired from https://github.com/izdi/django-slack-oauth
 # lol this is not safe but idk how to use os.environ.get yet
 SLACK_CLIENT_ID = '2684013468498.2669348519687'
 SLACK_CLIENT_SECRET = 'e7f251b28ad8bfff290305f41916e951'
 SLACK_SCOPE = 'admin,bot'
+
+# ==================== MICROSOFT ====================
+# inspired from https://github.com/shubhamdipt/django-microsoft-authentication
+MICROSOFT = {
+    # TODO 
+    "app_id": "YOUR_APP_ID_HERE",
+    # TODO 
+    "app_secret": "YOUR_APP_SECRET_HERE",
+    "redirect": "http://localhost:8000/microsoft_authentication/callback",
+    "scopes": ["user.read"],
+    "authority": "https://login.microsoftonline.com/common",  # or using tenant "https://login.microsoftonline.com/{tenant}",
+    "valid_email_domains": ["<list_of_valid_domains>"],
+    "logout_uri": "http://localhost:8000/admin/logout"
+}
+LOGIN_URL = "/microsoft_authentication/login"
+LOGIN_REDIRECT_URL = "/admin"  # optional and can be changed to any other url
 
 # Application definition
 
@@ -42,6 +60,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_slack_oauth',
+    'microsoft_authentication',
 ]
 
 MIDDLEWARE = [
