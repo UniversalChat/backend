@@ -5,6 +5,8 @@ name = "pypi"
 
 [packages]
 django = "*"
+six = "*"
+django-slack-oauth = {git = "https://github.com/izdi/django-slack-oauth", editable = true}
 
 [dev-packages]
 
